@@ -14,4 +14,4 @@ const dbPassword = process.env.DB_PASSWORD;
 
 const connection = new sequelize(dbName, dbUser, dbPassword, dbOptions);
 
-module.exports = { connection };
+module.exports = connection;
