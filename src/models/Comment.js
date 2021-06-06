@@ -9,11 +9,7 @@ const schema = {
     primaryKey: true,
     autoIncrement: true,
   },
-  title: {
-    type: DataTypes.STRING,
-    allowNull: false,
-  },
-  body: {
+  message: {
     type: DataTypes.STRING,
     allowNull: false,
   },
@@ -24,20 +20,27 @@ const schema = {
       model: "user",
       key: "id",
     },
-    onDelete: "CASCADE",
+  },
+  post_id: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+    references: {
+      model: "post",
+      key: "id",
+    },
   },
 };
 
 const options = {
   sequelize,
-  modelName: "post",
+  modelName: "comment",
   timestamps: true,
   underscored: true,
   freezeTableName: true,
 };
 
-class Post extends Model {}
+class Comment extends Model {}
 
-Post.init(schema, options);
+Comment.init(schema, options);
 
-module.exports = Post;
+module.exports = Comment;
