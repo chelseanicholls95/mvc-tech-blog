@@ -1,0 +1,37 @@
+[
+  {
+    "message": "I agree!",
+    "user_id": "2",
+    "post_id": "1"
+  },
+  {
+    "message": "This was a GREAT read.",
+    "user_id": "3",
+    "post_id": "3"
+  },
+  {
+    "message": "This is an amazing idea!",
+    "user_id": "1",
+    "post_id": "5"
+  },
+  {
+    "message": "Great work.",
+    "user_id": "2",
+    "post_id": "4"
+  },
+  {
+    "message": "I don't agree with this.",
+    "user_id": "2",
+    "post_id": "5"
+  },
+  {
+    "message": "Really enjoyed reading this! Keep up the good work.",
+    "user_id": "3",
+    "post_id": "2"
+  },
+  {
+    "message": "Love reading your posts.",
+    "user_id": "3",
+    "post_id": "2"
+  }
+]

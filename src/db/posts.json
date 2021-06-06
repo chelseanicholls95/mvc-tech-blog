@@ -1,0 +1,27 @@
+[
+  {
+    "title": "Microsoft's Open-Source Pivot Is Creating a Great Place to Work",
+    "body": "Microsoft isn't just building for the future. The company is focusing on tools that will allow an ever-broader group of people to program for themselves. At the heart of this plan is Microsoft's pivot to open source; and while there were several benefits of that action highlighted at Microsoft Build last week, an important one was left out -- which is that Microsoft has become a far better place to work.",
+    "user_id": "1"
+  },
+  {
+    "title": "Bolt-On Security the Linux Way",
+    "body": "In this piece, I aim to provide a range of simple but effective options for encrypting a small number of files. In particular, these options are salient for use cases like tax filing, where users are sending sensitive documents to recipients with an unknown degree of technical proficiency. Fond as I am of PGP, I'll bet you your refund check that your accountant doesn't know the first thing about using it.",
+    "user_id": "1"
+  },
+  {
+    "title": "Autonomous Cars + IoT, and Life or Death Decisions",
+    "body": "An ecosystem is being created where cars and robots are autonomous and connected so they will be able to connect to other devices, sensors, and data repositories available to them. Let's explore some safety risks associated with this future connectivity on our roadways. We'll then close with the product of the week: a new tablet that is Amazon's first real effort to build a Surface-like laptop.",
+    "user_id": "2"
+  },
+  {
+    "title": "Once the Big Tech Battler, Open Source Is Now Big Tech's Battleground",
+    "body": "A cadre of tech giants have created the Rust Foundation. This is neither the first nor largest contribution to an open-source project by private tech vendors. Still, the creation of this new body marks another noteworthy instance in which proprietary software companies took the initiative to found and steward a nonprofit project. It's not groundbreaking, but it doesn't happen every day.",
+    "user_id": "3"
+  },
+  {
+    "title": "It's Time to Consider 3D Printed Homes",
+    "body": "This emerging building method is far less wasteful, far faster, and far cheaper to build much sturdier homes. The only real downside is that the skills and technology to build these houses aren't widely available yet. Still, a shift to 3D printed building could create many new jobs, and the training required isn't considered exceedingly difficult. Let's talk about 3D printed homes, and we'll close with the product of the week, the ARM-based HP Elite Folio.",
+    "user_id": "3"
+  }
+]
