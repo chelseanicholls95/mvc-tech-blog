@@ -1,5 +1,6 @@
 const { Model, DataTypes } = require("sequelize");
 
+const hooks = require("../hooks");
 const sequelize = require("../config/connection");
 
 const schema = {
@@ -35,6 +36,7 @@ const schema = {
 };
 
 const options = {
+  hooks,
   sequelize,
   modelName: "user",
   timestamps: true,
