@@ -1,12 +1,13 @@
 const { Router } = require("express");
 
-const auth = require("../middleware/auth");
+const authRoutes = require("../routes/auth");
 const htmlRoutes = require("./html");
 const apiRoutes = require("./api");
 
 const router = Router();
 
-router.use("/api", auth, apiRoutes);
+router.use("/auth", authRoutes);
+router.use("/api", apiRoutes);
 router.use("/", htmlRoutes);
 
 module.exports = router;

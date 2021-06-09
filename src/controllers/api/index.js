@@ -44,10 +44,6 @@ const getPost = async (req, res) => {
   }
 };
 
-const createPost = async (req, res) => {
-  res.send("create");
-};
-
 const updatePost = async (req, res) => {
   try {
     const { title, body } = req.body;
@@ -90,7 +86,6 @@ const deletePost = async (req, res) => {
 module.exports = {
   getPosts,
   getPost,
-  createPost,
   updatePost,
   deletePost,
 };
