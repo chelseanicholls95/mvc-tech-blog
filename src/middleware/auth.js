@@ -1,8 +1,8 @@
 const auth = (req, res, next) => {
-  if (!req.session.isLoggedIn) {
+  if (req.session.isLoggedIn) {
     next();
   } else {
-    res.status(400).json({ error: "Please log in" });
+    res.redirect("/login");
   }
 };
 
