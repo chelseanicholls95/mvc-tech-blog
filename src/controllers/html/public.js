@@ -8,7 +8,9 @@ const renderHome = (req, res) => {
 
 const renderLogin = (req, res) => {
   try {
-    res.render("login");
+    res.render("login", {
+      layout: "login",
+    });
   } catch (error) {
     res.status(500).json({ error: "Failed to render" });
   }
@@ -16,7 +18,9 @@ const renderLogin = (req, res) => {
 
 const renderSignup = (req, res) => {
   try {
-    res.render("signup");
+    res.render("signup", {
+      layout: "signup",
+    });
   } catch (error) {
     res.status(500).json({ error: "Failed to render" });
   }
