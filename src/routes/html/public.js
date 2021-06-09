@@ -4,7 +4,7 @@ const {
   renderHome,
   renderLogin,
   renderSignup,
-} = require("../../controllers/html");
+} = require("../../controllers/html/public");
 
 const router = Router();
 
