@@ -1,4 +1,8 @@
-{{> public-navbar}}  
+{{#if isLoggedIn}}
+{{> private-navbar}}
+{{else}}
+{{> public-navbar}}
+{{/if}}
     <div class="position-relative login-container">
       <div class="position-absolute top-50 start-50 translate-middle w-75">
         <h3 class="bg-dark text-light mx-5 p-3 text-center">Welcome Back!</h3>

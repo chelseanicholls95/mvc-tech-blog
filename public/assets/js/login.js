@@ -19,7 +19,7 @@ const onSubmit = async (event) => {
   const response = await fetch("/auth/login", options);
 
   if (response.status !== 200) {
-    console.log("FAILED LOGIN");
+    console.log("Login failed");
   } else {
     window.location.replace("/dashboard");
   }
