@@ -2,6 +2,7 @@ require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 const path = require("path");
+const handlebars = require("express-handlebars");
 const session = require("express-session");
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
 
@@ -20,6 +21,20 @@ const sessionOptions = {
     db: sequelize,
   }),
 };
+
+const handlebarsOptions = {
+  secret: process.env.SESSION_SECRET,
+  resave: false,
+  saveUninitialized: false,
+  store: new SequelizeStore({
+    db: sequelize,
+  }),
+};
+
+const hbs = handlebars.create(handlebarsOptions);
+
+app.engine("handlebars", hbs.engine);
+app.set("view engine", "handlebars");
 
 app.use(cors());
 app.use(session(sessionOptions));
