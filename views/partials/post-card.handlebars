@@ -1,0 +1,19 @@
+<div class="card m-2 mb-4 border-dark">
+  <div
+    class="card-header d-inline-flex justify-content-between bg-dark text-light"
+  >
+    <div>{{title}}</div>
+    <div>{{firstName}} {{lastName}} | {{createdAt}}</div>
+  </div>
+  <div class="card-body">
+    <div>
+      {{body}}
+    </div>
+    <a href="/dashboard/edit/{{id}}" class="btn btn-success card-link">Edit</a>
+    <button
+      id="{{id}}"
+      name="delete-btn"
+      class="btn btn-danger card-link"
+    >Delete</button>
+  </div>
+</div>

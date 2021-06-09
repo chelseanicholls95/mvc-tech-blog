@@ -16,6 +16,7 @@ const renderDashboard = async (req, res) => {
 
   const formattedPosts = posts.map((post) => post.get({ plain: true }));
 
+  console.log(formattedPosts);
   res.render("dashboard", { firstName, lastName, posts: formattedPosts });
 };
 

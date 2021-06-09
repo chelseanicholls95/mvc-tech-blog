@@ -1,23 +1,9 @@
 {{> private-navbar}}
-<div class="card m-2 mb-4 border-dark">
-      <div
-        class="
-          card-header
-          d-inline-flex
-          justify-content-between
-          bg-dark
-          text-light
-        "
-      >
-        <div>Blog Title</div>
-        <div>Author and date published</div>
-      </div>
-      <div class="card-body">
-        <div>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat.
-        </div>
-      </div>
-    </div>
+<div class="container">
+  <h1 class="text-center">Welcome {{ firstName }} {{ lastName }}!</h1>
+  
+    {{#each posts as |post|}}
+      {{> post-card}}
+    {{/each}}
+  </div>
+</div>
