@@ -16,7 +16,7 @@ const renderLogin = (req, res) => {
 
 const renderSignup = (req, res) => {
   try {
-    res.send("signup");
+    res.render("signup");
   } catch (error) {
     res.status(500).json({ error: "Failed to render" });
   }
