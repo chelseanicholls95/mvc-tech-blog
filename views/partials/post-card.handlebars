@@ -6,14 +6,17 @@
     <div>{{firstName}} {{lastName}} | {{createdAt}}</div>
   </div>
   <div class="card-body">
-    <div>
+    <div class="mb-3">
       {{body}}
     </div>
-    <a href="/dashboard/edit/{{id}}" class="btn btn-success card-link">Edit</a>
+    <a
+      href="/dashboard/edit/{{id}}"
+      class="btn btn-outline-dark card-link"
+    >Edit</a>
     <button
       id="{{id}}"
       name="delete-btn"
-      class="btn btn-danger card-link"
+      class="btn btn-dark card-link"
     >Delete</button>
   </div>
 </div>

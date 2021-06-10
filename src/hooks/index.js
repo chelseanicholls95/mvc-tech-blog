@@ -1,7 +1,6 @@
 const bcrypt = require("bcrypt");
 
 const beforeBulkCreate = async (users) => {
-  console.log(users);
   const promises = users.map((user) => {
     return bcrypt.hash(user.password, 10);
   });
