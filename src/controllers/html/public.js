@@ -74,7 +74,13 @@ const renderViewPost = async (req, res) => {
 
   const correctUser = checkUser(isLoggedIn, userId, post);
 
-  res.render("post", { post, comments, isLoggedIn, correctUser });
+  res.render("post", {
+    post,
+    comments,
+    isLoggedIn,
+    correctUser,
+    layout: "post",
+  });
 };
 
 module.exports = {
