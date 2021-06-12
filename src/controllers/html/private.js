@@ -19,4 +19,8 @@ const renderDashboard = async (req, res) => {
   res.render("dashboard", { firstName, lastName, posts: formattedPosts });
 };
 
-module.exports = renderDashboard;
+const renderCreateNewPost = (req, res) => {
+  res.render("new-post");
+};
+
+module.exports = { renderDashboard, renderCreateNewPost };
