@@ -28,3 +28,15 @@
         </div>
       </div>
     </div>
+    <div class="d-flex justify-content-center comments-container">
+      <div class="mt-5 w-50 border border-dark">
+        <div class="card-header d-flex flex-column border border-dark text-center">
+          <div>Comments</div>
+        </div>
+        <div class="card-body">
+          {{#each comments as |comment|}}
+            {{> comment-card}}
+          {{/each}}
+        </div>
+      </div>
+    </div>
