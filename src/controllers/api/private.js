@@ -2,8 +2,8 @@ const { Post } = require("../../models");
 
 const createPost = async (req, res) => {
   try {
-    console.log("here");
-    const { title, body, user_id } = req.body;
+    const { title, body } = req.body;
+    const { userId: user_id } = req.session;
 
     const post = { title, body, user_id };
 

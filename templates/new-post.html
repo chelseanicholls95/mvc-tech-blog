@@ -61,7 +61,7 @@
         <h3 class="bg-dark text-light mx-5 p-3 text-center">
           Create A New Post
         </h3>
-        <form class="mx-5 p-3 border d-flex flex-column">
+        <form class="mx-5 p-3 border d-flex flex-column" id="new-post">
           <div class="form-floating mb-3">
             <input
               type="text"
@@ -73,14 +73,10 @@
           </div>
 
           <div class="mb-3">
-            <textarea
-              class="form-control"
-              id="exampleFormControlTextarea1"
-              rows="8"
-            ></textarea>
+            <textarea class="form-control" id="body" rows="8"></textarea>
           </div>
           <div class="text-center d-grid gap-2">
-            <button type="button" class="btn btn-dark btn-lg">Submit</button>
+            <button type="submit" class="btn btn-dark btn-lg">Submit</button>
             <a
               type="button"
               class="btn btn-outline-dark btn-lg"

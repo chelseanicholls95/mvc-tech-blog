@@ -5,7 +5,6 @@ const {
   updatePost,
   deletePost,
 } = require("../../controllers/api/private");
-const auth = require("../../middleware/auth");
 
 const router = Router();
 

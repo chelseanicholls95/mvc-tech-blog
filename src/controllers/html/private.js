@@ -20,7 +20,9 @@ const renderDashboard = async (req, res) => {
 };
 
 const renderCreateNewPost = (req, res) => {
-  res.render("new-post");
+  res.render("new-post", {
+    layout: "new-post",
+  });
 };
 
 module.exports = { renderDashboard, renderCreateNewPost };
