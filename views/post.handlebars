@@ -1,0 +1,30 @@
+{{#if isLoggedIn}}
+{{> private-navbar}}
+{{else}}
+{{> public-navbar}}
+{{/if}}
+    <div class="d-flex justify-content-center post-container">
+      <div class="mt-5 w-75 border border-dark">
+        <div class="card-header d-flex flex-column bg-dark text-light">
+          <div>
+            {{title}}
+          </div>
+          <small>{{user.first_name}} {{user.last_name}} | {{created_at}}</small>
+        </div>
+        <div class="card-body d-flex flex-column">
+          <div>
+            {{body}}
+          </div>
+        </div>
+        <div class="p-3 d-flex justify-content-end">
+          <a
+            href="/dashboard/edit/{{id}}"
+            class="btn btn-outline-dark card-link"
+            >Edit</a
+          >
+          <button id="{{id}}" name="delete-btn" class="btn btn-dark card-link">
+            Delete
+          </button>
+        </div>
+      </div>
+    </div>
