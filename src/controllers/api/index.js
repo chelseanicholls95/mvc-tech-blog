@@ -44,6 +44,21 @@ const getPost = async (req, res) => {
   }
 };
 
+const createPost = async (req, res) => {
+  try {
+    const { title, body, user_id } = req.body;
+
+    const post = { title, body, user_id };
+
+    await Post.create(post);
+
+    res.status(200).redirect("/dashboard");
+  } catch (error) {
+    console.error(error.message);
+    return res.status(500).json({ error: "Failed to update post" });
+  }
+};
+
 const updatePost = async (req, res) => {
   try {
     const { title, body } = req.body;
@@ -61,6 +76,7 @@ const updatePost = async (req, res) => {
 
     return res.status(200).json({ data: "Update successful" });
   } catch (error) {
+    console.error(error.message);
     return res.status(500).json({ error: "Failed to update post" });
   }
 };
@@ -79,6 +95,7 @@ const deletePost = async (req, res) => {
 
     return res.status(200).json({ data: "Delete successful" });
   } catch (error) {
+    console.error(error.message);
     return res.status(500).json({ error: "Failed to delete post" });
   }
 };
@@ -86,6 +103,7 @@ const deletePost = async (req, res) => {
 module.exports = {
   getPosts,
   getPost,
+  createPost,
   updatePost,
   deletePost,
 };
