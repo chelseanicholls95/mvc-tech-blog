@@ -1,6 +1,6 @@
-<div class="d-flex flex-column border">
-  <div class="mb-2"><b>{{user.first_name}} {{user.last_name}}</b>
+<div class="d-flex flex-column border-bottom">
+  <div class="my-2"><b>{{user.first_name}} {{user.last_name}}</b>
     |
-    <small>{{createdAt}}</small></div>
+    <small>{{formatDate createdAt}}</small></div>
   <div class="mb-3">{{message}}</div>
 </div>

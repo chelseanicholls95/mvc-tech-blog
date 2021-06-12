@@ -9,13 +9,15 @@
           <div>
             {{post.title}}
           </div>
-          <small>{{post.user.first_name}} {{post.user.last_name}} | {{post.createdAt}}</small>
+          <small>{{post.user.first_name}} {{post.user.last_name}} | {{formatDate post.createdAt}}</small>
         </div>
         <div class="card-body d-flex flex-column">
           <div>
             {{post.body}}
           </div>
         </div>
+
+       {{#if isLoggedIn}}
         <div class="p-3 d-flex justify-content-end">
           <a
             href="/dashboard/edit/{{post.id}}"
@@ -26,13 +28,17 @@
             Delete
           </button>
         </div>
+      {{/if}}
+      
       </div>
     </div>
     <div class="d-flex justify-content-center comments-container">
       <div class="mt-5 w-50 border border-dark">
         <div class="card-header d-flex justify-content-between border border-dark">
           <div>Comments</div>
+          {{#if isLoggedIn}}
           <button type="button" class="btn btn-dark btn-sm">Add comment</button>
+          {{/if}}
         </div>
         <div class="card-body">
           {{#each comments as |comment|}}

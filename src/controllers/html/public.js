@@ -2,6 +2,7 @@ const { User, Post, Comment } = require("../../models");
 
 const renderHome = async (req, res) => {
   try {
+    const { isLoggedIn } = req.session;
     const posts = await Post.findAll({
       include: [
         {
@@ -12,7 +13,7 @@ const renderHome = async (req, res) => {
 
     const formattedPosts = posts.map((post) => post.get({ plain: true }));
 
-    res.render("home", { posts: formattedPosts });
+    res.render("home", { posts: formattedPosts, isLoggedIn });
   } catch (error) {
     res.status(500).json({ error: "Failed to render" });
   }
@@ -40,6 +41,7 @@ const renderSignup = (req, res) => {
 
 const renderViewPost = async (req, res) => {
   const { id } = req.params;
+  const { isLoggedIn, userId } = req.session;
 
   const data = await Post.findByPk(id, {
     include: [
@@ -67,7 +69,7 @@ const renderViewPost = async (req, res) => {
   const post = data.get({ plain: true });
   const comments = commentsData.map((comment) => comment.get({ plain: true }));
 
-  res.render("post", { post, comments });
+  res.render("post", { post, comments, isLoggedIn, userId });
 };
 
 module.exports = {

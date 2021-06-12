@@ -1,7 +1,10 @@
 <div class="card m-3 mb-4 border-dark">
   <div class="card-header d-flex flex-column bg-dark text-light">
     <div>{{title}}</div>
-    <small>{{user.first_name}} {{user.last_name}} | {{createdAt}}</small>
+    <small>{{user.first_name}}
+      {{user.last_name}}
+      |
+      {{formatDate createdAt}}</small>
   </div>
   <div class="card-body d-flex flex-column">
     <div class="mb-3">
