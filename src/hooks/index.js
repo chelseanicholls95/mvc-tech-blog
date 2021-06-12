@@ -12,4 +12,8 @@ const beforeBulkCreate = async (users) => {
   });
 };
 
-module.exports = { beforeBulkCreate };
+const beforeCreate = async (user) => {
+  user.password = await bcrypt.hash(user.password, 10);
+};
+
+module.exports = { beforeBulkCreate, beforeCreate };
