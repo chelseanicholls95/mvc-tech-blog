@@ -1,24 +1,12 @@
 const { Router } = require("express");
 
-const {
-  getPosts,
-  getPost,
-  createPost,
-  updatePost,
-  deletePost,
-} = require("../../controllers/api");
+const publicRoutes = require("./public");
+const privateRoutes = require("./private");
 const auth = require("../../middleware/auth");
 
 const router = Router();
 
-router.get("/", getPosts);
-
-router.get("/:id", getPost);
-
-router.post("/", auth, createPost);
-
-router.put("/:id", auth, updatePost);
-
-router.delete("/:id", auth, deletePost);
+router.use(publicRoutes);
+router.use(auth, privateRoutes);
 
 module.exports = router;

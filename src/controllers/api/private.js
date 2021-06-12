@@ -1,58 +1,15 @@
-const { Post, User } = require("../../models");
-
-const getPosts = async (req, res) => {
-  try {
-    const posts = await Post.findAll({
-      include: [
-        {
-          model: User,
-          attributes: {
-            exclude: ["password", "email", "createdAt", "updatedAt"],
-          },
-        },
-      ],
-    });
-    return res.status(200).json(posts);
-  } catch (error) {
-    console.error(error.message);
-    return res.status(500).json({ error: "Failed to get all posts." });
-  }
-};
-
-const getPost = async (req, res) => {
-  try {
-    const { id } = req.params;
-    const post = await Post.findByPk(id, {
-      include: [
-        {
-          model: User,
-          attributes: {
-            exclude: ["password", "email", "createdAt", "updatedAt"],
-          },
-        },
-      ],
-    });
-
-    if (!post) {
-      return res.status(404).json({ error: "Post does not exist." });
-    }
-
-    return res.status(200).json(post);
-  } catch (error) {
-    console.error(error.message);
-    return res.status(500).json({ error: "Failed to get post." });
-  }
-};
+const { Post } = require("../../models");
 
 const createPost = async (req, res) => {
   try {
+    console.log("here");
     const { title, body, user_id } = req.body;
 
     const post = { title, body, user_id };
 
     await Post.create(post);
 
-    res.status(200).redirect("/dashboard");
+    res.status(200).json({ data: "Successfully created post" });
   } catch (error) {
     console.error(error.message);
     return res.status(500).json({ error: "Failed to update post" });
@@ -101,8 +58,6 @@ const deletePost = async (req, res) => {
 };
 
 module.exports = {
-  getPosts,
-  getPost,
   createPost,
   updatePost,
   deletePost,
