@@ -5,3 +5,11 @@
 .signup-container {
   height: 130vh;
 }
+
+.new-post-container {
+  height: 80vh;
+}
+
+#post-body {
+  height: 200px;
+}
