@@ -26,7 +26,6 @@ const renderCreateNewPost = (req, res) => {
 };
 
 const renderEditPost = async (req, res) => {
-  console.log("here");
   const { id } = req.params;
 
   const data = await Post.findByPk(id);
@@ -37,8 +36,6 @@ const renderEditPost = async (req, res) => {
 
   const post = data.get({ plain: true });
   const edit = true;
-
-  console.log(post);
 
   res.render("new-post", { post, edit, layout: "new-post" });
 };

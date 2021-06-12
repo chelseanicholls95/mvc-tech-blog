@@ -8,7 +8,12 @@
             Create A New Post
           {{/if}}
         </h3>
-        <form class="mx-5 p-3 border d-flex flex-column" id="new-post">
+        <form class="mx-5 p-3 border d-flex flex-column" id="{{post.id}}"
+          {{#if edit}}
+            name="edit-post" 
+          {{else}}
+          name="new-post"
+          {{/if}}>
           <div class="form-floating mb-3">
             <input
               type="text"
