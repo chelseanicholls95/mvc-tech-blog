@@ -28,7 +28,7 @@ const login = async (req, res) => {
       return res.status(200).json({ data: "Login successful" });
     });
   } catch (error) {
-    console.error(err.message);
+    console.error(error.message);
     return res.status(500).json({ error: "Failed to login" });
   }
 };
@@ -63,7 +63,7 @@ const signup = async (req, res) => {
 
     return res.status(400).json({ error: "Failed to create user" });
   } catch (error) {
-    console.log(err.message);
+    console.log(error.message);
     return res.status(500).json({ error: "Failed to create user" });
   }
 };

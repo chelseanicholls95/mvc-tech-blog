@@ -14,6 +14,7 @@ const schema = {
   username: {
     type: DataTypes.STRING,
     allowNull: false,
+    unique: true,
   },
   email: {
     type: DataTypes.STRING,
@@ -21,6 +22,7 @@ const schema = {
     validate: {
       isEmail: true,
     },
+    unique: true,
   },
   password: {
     type: DataTypes.STRING,
