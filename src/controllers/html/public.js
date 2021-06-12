@@ -1,4 +1,4 @@
-const { User, Post } = require("../../models");
+const { User, Post, Comment } = require("../../models");
 
 const renderHome = async (req, res) => {
   try {
@@ -49,13 +49,25 @@ const renderViewPost = async (req, res) => {
     ],
   });
 
+  const commentsData = await Comment.findAll({
+    where: {
+      post_id: id,
+    },
+    include: [
+      {
+        model: User,
+      },
+    ],
+  });
+
   if (!data) {
     return res.redirect("/");
   }
 
   const post = data.get({ plain: true });
+  const comments = commentsData.map((comment) => comment.get({ plain: true }));
 
-  res.render("post", post);
+  res.render("post", { post, comments });
 };
 
 module.exports = {
