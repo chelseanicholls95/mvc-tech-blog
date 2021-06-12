@@ -2,7 +2,11 @@
 <div class="position-relative new-post-container">
       <div class="position-absolute top-50 start-50 translate-middle w-75">
         <h3 class="bg-dark text-light mx-5 p-3 text-center">
-          Create A New Post
+          {{#if edit}}
+            Edit Post
+          {{else}}
+            Create A New Post
+          {{/if}}
         </h3>
         <form class="mx-5 p-3 border d-flex flex-column" id="new-post">
           <div class="form-floating mb-3">
@@ -11,6 +15,9 @@
               class="form-control"
               id="title"
               placeholder="Title"
+              {{#if edit}}
+            value="{{post.title}}"
+            {{/if}}
             />
             <label for="title">Title</label>
           </div>
@@ -20,7 +27,9 @@
               class="form-control"
               id="body"
               rows="8"
-            ></textarea>
+            >{{#if edit}}
+            {{post.body}}
+            {{/if}}</textarea>
           </div>
           <div class="text-center d-grid gap-2">
             <button type="submit" class="btn btn-dark btn-lg">Submit</button>

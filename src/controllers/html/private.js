@@ -25,4 +25,26 @@ const renderCreateNewPost = (req, res) => {
   });
 };
 
-module.exports = { renderDashboard, renderCreateNewPost };
+const renderEditPost = async (req, res) => {
+  console.log("here");
+  const { id } = req.params;
+
+  const data = await Post.findByPk(id);
+
+  if (!data) {
+    return res.redirect("/dashboard");
+  }
+
+  const post = data.get({ plain: true });
+  const edit = true;
+
+  console.log(post);
+
+  res.render("new-post", { post, edit, layout: "new-post" });
+};
+
+module.exports = {
+  renderDashboard,
+  renderCreateNewPost,
+  renderEditPost,
+};
