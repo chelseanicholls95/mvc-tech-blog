@@ -43,6 +43,9 @@ const renderViewPost = async (req, res) => {
   const { id } = req.params;
   const { isLoggedIn, userId } = req.session;
 
+  const checkUser = (isLoggedIn, userId, post) =>
+    isLoggedIn && userId === post.user_id;
+
   const data = await Post.findByPk(id, {
     include: [
       {
@@ -69,7 +72,9 @@ const renderViewPost = async (req, res) => {
   const post = data.get({ plain: true });
   const comments = commentsData.map((comment) => comment.get({ plain: true }));
 
-  res.render("post", { post, comments, isLoggedIn, userId });
+  const correctUser = checkUser(isLoggedIn, userId, post);
+
+  res.render("post", { post, comments, isLoggedIn, correctUser });
 };
 
 module.exports = {
