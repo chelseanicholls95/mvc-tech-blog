@@ -38,8 +38,29 @@ const renderSignup = (req, res) => {
   }
 };
 
+const renderViewPost = async (req, res) => {
+  const { id } = req.params;
+
+  const data = await Post.findByPk(id, {
+    include: [
+      {
+        model: User,
+      },
+    ],
+  });
+
+  if (!data) {
+    return res.redirect("/");
+  }
+
+  const post = data.get({ plain: true });
+
+  res.render("post", post);
+};
+
 module.exports = {
   renderHome,
   renderLogin,
   renderSignup,
+  renderViewPost,
 };
