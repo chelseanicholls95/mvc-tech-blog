@@ -6,22 +6,22 @@
     <div class="position-relative signup-container">
       <div class="position-absolute top-50 start-50 translate-middle w-75">
         <h3 class="bg-dark text-light mx-5 p-3 text-center">Sign Up</h3>
-        <form class="mx-5 p-3 d-flex flex-column border">
+        <form class="mx-5 p-3 d-flex flex-column border" id="signup-form">
           <div class="mb-3">
             <label for="first-name" class="form-label">First Name</label>
             <input
               type="text"
               class="form-control"
-              id="first-name"
+              id="firstName"
             />
           </div>
 
           <div class="mb-3">
             <label for="last-name" class="form-label">Last Name</label>
             <input
-              type="email"
+              type="text"
               class="form-control"
-              id="last-name"
+              id="lastName"
             />
           </div>
 
@@ -47,10 +47,10 @@
             <input type="password" class="form-control" id="password" />
           </div>
           <div class="mb-2">
-            <label for="confirm-password" class="form-label"
+            <label for="confirmPassword" class="form-label"
               >Confirm Password</label
             >
-            <input type="password" class="form-control" id="confirm-password" />
+            <input type="password" class="form-control" id="confirmPassword" />
           </div>
           <button type="submit" class="btn btn-dark">Submit</button>
           <p class="mb-3 pt-3 text-center">
