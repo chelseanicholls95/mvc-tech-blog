@@ -1,4 +1,4 @@
-const { Post } = require("../../models");
+const { Post, Comment } = require("../../models");
 
 const createPost = async (req, res) => {
   try {
@@ -57,8 +57,26 @@ const deletePost = async (req, res) => {
   }
 };
 
+const createComment = async (req, res) => {
+  try {
+    const { message } = req.body;
+    const { userId: user_id } = req.session;
+    const { id: post_id } = req.params;
+
+    const comment = { message, user_id, post_id };
+
+    await Comment.create(comment);
+
+    res.status(200).json({ data: "Successfully created comment" });
+  } catch (error) {
+    console.error(error.message);
+    return res.status(500).json({ error: "Failed to update comment" });
+  }
+};
+
 module.exports = {
   createPost,
   updatePost,
   deletePost,
+  createComment,
 };
