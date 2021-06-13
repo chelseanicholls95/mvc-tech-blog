@@ -38,7 +38,14 @@
         <div class="card-header d-flex justify-content-between border border-dark">
           <div>Comments</div>
           {{#if isLoggedIn}}
-          <button type="button" class="btn btn-dark btn-sm">Add comment</button>
+          <button
+            type="button"
+            class="btn btn-dark btn-sm"
+            data-bs-toggle="modal"
+            data-bs-target="#modal"
+          >
+            Add comment
+          </button>
           {{/if}}
         </div>
         <div class="card-body">
@@ -50,3 +57,5 @@
         </div>
       </div>
     </div>
+
+    {{> modal}}

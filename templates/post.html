@@ -84,31 +84,88 @@
     </div>
     <div class="d-flex justify-content-center comments-container">
       <div class="mt-5 w-50 border border-dark">
-        <div class="card-header d-flex flex-column border border-dark text-center">
+        <div
+          class="card-header d-flex justify-content-between border border-dark"
+        >
           <div>Comments</div>
+          <button
+            type="button"
+            class="btn btn-primary"
+            data-bs-toggle="modal"
+            data-bs-target="#modal"
+          >
+            Add comment
+          </button>
         </div>
         <div class="card-body">
           <div class="d-flex flex-column border">
-            <div class="mb-2"><b>Alice Green</b> | <small>12/06/2021 - 21:15</small></div>
+            <div class="mb-2">
+              <b>Alice Green</b> | <small>12/06/2021 - 21:15</small>
+            </div>
             <div class="mb-3">Loved this post</div>
           </div>
           <div class="d-flex flex-column">
-            <div class="mb-2"><b>Bob Smith</b> | <small>12/06/2021 - 21:15</small></div>
+            <div class="mb-2">
+              <b>Bob Smith</b> | <small>12/06/2021 - 21:15</small>
+            </div>
             <div class="mb-3">Loved this post</div>
           </div>
           <div class="d-flex flex-column">
-            <div class="mb-2"><b>Dave Jones</b> | <small>12/06/2021 - 21:15</small></div>
+            <div class="mb-2">
+              <b>Dave Jones</b> | <small>12/06/2021 - 21:15</small>
+            </div>
             <div class="mb-3">Loved this post</div>
           </div>
           <div class="d-flex flex-column">
-            <div class="mb-2"><b>Jennifer Lopez</b> | <small>12/06/2021 - 21:15</small></div>
+            <div class="mb-2">
+              <b>Jennifer Lopez</b> | <small>12/06/2021 - 21:15</small>
+            </div>
             <div class="mb-3">Loved this post</div>
           </div>
           <div class="d-flex flex-column">
-            <div class="mb-2"><b>Alice Green</b> | <small>12/06/2021 - 21:15</small></div>
+            <div class="mb-2">
+              <b>Alice Green</b> | <small>12/06/2021 - 21:15</small>
+            </div>
             <div class="mb-3">Loved this post</div>
           </div>
         </div>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="modal" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Add Comment</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <form class="comment-form">
+            <div class="modal-body">
+              <div class="mb-3">
+                <textarea
+                  class="form-control"
+                  id="comment-input"
+                  rows="3"
+                ></textarea>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+              <button type="button" class="btn btn-primary">Save</button>
+            </div>
+          </form>
         </div>
       </div>
     </div>
