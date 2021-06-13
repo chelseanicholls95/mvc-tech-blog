@@ -6,6 +6,10 @@
   height: 130vh;
 }
 
+.dashboard-container {
+  height: 70vh;
+}
+
 .new-post-container {
   height: 100vh;
 }

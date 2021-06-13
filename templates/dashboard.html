@@ -9,7 +9,11 @@
       integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="/public/assets/css/style.css"
+    />
     <title>Tech Blog</title>
   </head>
   <body>
@@ -51,6 +55,30 @@
         </div>
       </div>
     </nav>
+
+    <div class="position-relative dashboard-container">
+      <div class="position-absolute top-50 start-50 translate-middle w-30">
+        <h3 class="mx-5 p-3 text-center">Uh oh! You have no posts</h3>
+        <a
+          type="button"
+          class="btn btn-dark m-3 d-flex justify-content-center"
+          href="/dashboard/new"
+          >Start creating!</a
+        >
+      </div>
+    </div>
+
+    <!-- <div class="position-relative dashboard-container">
+      <div class="position-absolute top-50 start-50 translate-middle w-75">
+        <div class="d-flex flex-column mt-5 w-75 text-center">
+          <h3>You have no posts!</h3>
+          <a type="button" class="btn btn-dark w-50 m-3" href="/dashboard/new"
+            >Create your first post!</a
+          >
+        </div>
+      </div>
+    </div> -->
+
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
       integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="

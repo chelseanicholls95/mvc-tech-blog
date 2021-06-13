@@ -2,8 +2,26 @@
 <div class="container">
   <h1 class="text-center my-3">Welcome {{ firstName }} {{ lastName }}!</h1>
   
+{{#unless posts}}
+
+    <div class="position-relative dashboard-container">
+      <div class="position-absolute top-50 start-50 translate-middle w-30">
+        <h3 class="mx-5 p-3 text-center">Uh oh! You have no posts</h3>
+        <a
+          type="button"
+          class="btn btn-dark m-3 d-flex justify-content-center"
+          href="/dashboard/new"
+          >Start creating!</a
+        >
+      </div>
+    </div>
+
+  {{else}}
+
     {{#each posts as |post|}}
       {{> post-card}}
     {{/each}}
+
+  {{/unless}}
   </div>
 </div>
