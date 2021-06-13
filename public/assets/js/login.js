@@ -19,7 +19,7 @@ const onSubmit = async (event) => {
   const response = await fetch("/auth/login", options);
 
   if (response.status !== 200) {
-    console.log("Login failed");
+    $("#login-modal").modal("show");
   } else {
     window.location.replace("/dashboard");
   }

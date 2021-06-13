@@ -40,12 +40,12 @@ const onSubmit = async (event) => {
     const response = await fetch("/auth/signup", options);
 
     if (response.status !== 200) {
-      console.log("FAILED SIGN UP");
+      $("#signup-modal").modal("show");
     } else {
       window.location.replace("/login");
     }
   } else {
-    console.log("Passwords do not match. Please try again.");
+    $("#password-modal").modal("show");
   }
 };
 
