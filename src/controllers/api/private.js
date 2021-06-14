@@ -74,9 +74,33 @@ const createComment = async (req, res) => {
   }
 };
 
+const updateComment = async (req, res) => {
+  try {
+    const { message } = req.body;
+    const { id: post_id } = req.params;
+    const { userId: user_id } = req.session;
+
+    const comment = { message, user_id, post_id };
+
+    const [updated] = await Comment.update(comment, {
+      where: { post_id, user_id },
+    });
+
+    if (!updated) {
+      return res.status(404).json({ error: "Post does not exist" });
+    }
+
+    return res.status(200).json({ data: "Update successful" });
+  } catch (error) {
+    console.error(error.message);
+    return res.status(500).json({ error: "Failed to update post" });
+  }
+};
+
 module.exports = {
   createPost,
   updatePost,
   deletePost,
   createComment,
+  updateComment,
 };

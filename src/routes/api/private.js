@@ -5,6 +5,7 @@ const {
   updatePost,
   deletePost,
   createComment,
+  updateComment,
 } = require("../../controllers/api/private");
 
 const router = Router();
@@ -16,5 +17,7 @@ router.put("/:id", updatePost);
 router.delete("/:id", deletePost);
 
 router.post("/:id/comment", createComment);
+
+router.put("/:id/comment/:id", updateComment);
 
 module.exports = router;
