@@ -40,6 +40,8 @@ const renderEditPost = async (req, res) => {
   res.render("new-post", { post, edit, layout: "new-post" });
 };
 
+const renderEditComment = async (req, res) => {};
+
 module.exports = {
   renderDashboard,
   renderCreateNewPost,

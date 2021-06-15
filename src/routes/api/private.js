@@ -18,6 +18,6 @@ router.delete("/:id", deletePost);
 
 router.post("/:id/comment", createComment);
 
-router.put("/:id/comment/:id", updateComment);
+router.put("/:id/comment/:comment_id", updateComment);
 
 module.exports = router;
