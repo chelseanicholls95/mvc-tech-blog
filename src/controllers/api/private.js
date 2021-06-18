@@ -77,13 +77,13 @@ const createComment = async (req, res) => {
 const updateComment = async (req, res) => {
   try {
     const { message } = req.body;
-    const { id: post_id, comment_id } = req.params;
+    const { post_id, comment_id: id } = req.params;
     const { userId: user_id } = req.session;
 
-    const comment = { message, user_id, post_id, comment_id };
+    const comment = { message, user_id, post_id, id };
 
     const [updated] = await Comment.update(comment, {
-      where: { id: comment_id, post_id, user_id },
+      where: { id },
     });
 
     if (!updated) {

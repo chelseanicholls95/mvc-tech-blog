@@ -47,8 +47,6 @@ const signup = async (req, res) => {
   try {
     const { firstName, lastName, username, email, password } = req.body;
 
-    console.log(firstName, lastName, username, email, password);
-
     if (firstName && lastName && username && email && password) {
       await User.create({
         first_name: firstName,

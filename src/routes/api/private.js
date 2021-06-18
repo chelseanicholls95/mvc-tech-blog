@@ -19,7 +19,7 @@ router.delete("/:id", deletePost);
 
 router.post("/:id/comment", createComment);
 
-router.put("/:id/comment/:comment_id", updateComment);
+router.put("/:post_id/comment/:comment_id", updateComment);
 
 router.delete("/:id/comment/:comment_id", deleteComment);
 

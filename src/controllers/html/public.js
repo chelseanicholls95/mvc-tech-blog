@@ -50,7 +50,6 @@ const renderViewPost = async (req, res) => {
     comments.map((comment) => {
       if (isLoggedIn && userId === comment.user_id) {
         comment.correctUser = true;
-        console.log(comment);
       } else {
         comment.correctUser = false;
       }

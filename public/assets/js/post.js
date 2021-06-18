@@ -42,15 +42,70 @@ const onSubmitCreate = async (event) => {
   }
 };
 
-// const onSubmitEdit = async (event) => {
-//   event.preventDefault();
+const onClickRenderEdit = async (event) => {
+  const container = $(event.currentTarget).parents("#comment-content");
+  const message = $(container).children("#message").text();
+  const commentId = event.currentTarget.id;
+  const postId = $(event.currentTarget).data("id");
 
-//   const comment_id = event.currentTarget.id;
+  const form = `<form name="edit-form" id="${commentId}" class="d-flex flex-row justify-content-between"
+  data-id="${postId}">
+    <input class="form-control form-control-sm" id="message-input" type="text" value="${message}">
+    <div>
+      <button
+        type="submit"
+        class="btn btn-outline-dark btn-sm"
+      >
+        Save
+      </button>
+      <button
+        type="button"
+        class="btn btn-dark btn-sm"
+        name="cancel-btn"
+        id="${commentId}"
+        data-id="${postId}"
+      >
+        Cancel
+      </button>
+    </div>
+  </form>`;
 
-//   const target = event.currentTarget;
-//   const post_id = $(target).data("id");
-//   console.log({ commentId: comment_id, postId: post_id });
-// };
+  $(container).empty();
+  $(container).append(form);
+
+  $('[name="edit-form"]').submit(onSubmitUpdateComment);
+};
+
+const onSubmitUpdateComment = async (event) => {
+  event.preventDefault();
+  const comment_id = event.currentTarget.id;
+  const post_id = $(event.currentTarget).data("id");
+  const message = $(event.currentTarget).children("#message-input").val();
+
+  const options = {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    redirect: "follow",
+    body: JSON.stringify({
+      comment_id,
+      post_id,
+      message,
+    }),
+  };
+
+  const response = await fetch(
+    `/api/posts/${post_id}/comment/${comment_id}`,
+    options
+  );
+
+  if (response.status !== 200) {
+    console.log("Failed to update");
+  } else {
+    window.location.replace(`/view/${post_id}`);
+  }
+};
 
 const onDeleteComment = async (event) => {
   const comment_id = event.currentTarget.id;
@@ -75,5 +130,5 @@ const onDeleteComment = async (event) => {
 
 $('[name="delete-btn"]').click(onDelete);
 $('[name="comment-form"]').submit(onSubmitCreate);
-// $('[name="edit-comment-form"]').submit(onSubmitEdit);
+$('[name="edit-btn"]').click(onClickRenderEdit);
 $('[name="delete-comment-btn"]').click(onDeleteComment);
