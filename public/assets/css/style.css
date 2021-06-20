@@ -1,5 +1,29 @@
+:root {
+  --primary: #2a9d8f;
+  --secondary: #e6ecec;
+}
+
+#navbar,
+#navbar a,
+#navbar button,
+#navbar span {
+  background-color: var(--primary) !important;
+  color: var(--secondary) !important;
+}
+
+#navbar a:hover {
+  color: var(--title) !important;
+}
+
 .login-container {
   height: 80vh;
+}
+
+#login,
+#signup,
+#new-post {
+  border: 1px solid var(--primary);
+  background-color: var(--secondary);
 }
 
 .signup-container {
@@ -16,4 +40,48 @@
 
 #post-body {
   height: 200px;
+}
+
+#post-card-header {
+  border-color: var(--primary);
+}
+
+.btn-outline-dark {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.btn-outline-dark:hover,
+.btn-outline-dark:active,
+.btn-outline-dark:focus {
+  border-color: var(--primary);
+  background-color: var(--primary);
+  color: white;
+}
+
+.btn-dark {
+  background-color: var(--primary);
+  border-color: var(--primary);
+  color: white;
+}
+
+.btn-dark:hover,
+.btn-dark:active,
+.btn-dark:focus {
+  border-color: #2a9d908a;
+  background-color: #2a9d908a;
+  color: white;
+}
+
+.comment-name {
+  color: var(--primary);
+}
+
+#comments {
+  border: 1px solid var(--primary);
+}
+
+.header {
+  border-bottom: 1px solid var(--primary);
+  color: var(--primary);
 }

@@ -1,24 +1,67 @@
 <div class="d-flex flex-column border-bottom">
-  <div class="my-2"><b>{{user.first_name}} {{user.last_name}}</b>
+  <div class="my-2 comment-name"><b>{{user.first_name}} {{user.last_name}}</b>
     |
     <small>{{formatDate createdAt}}</small></div>
-  <div class="mb-3 d-flex justify-content-between">
-    <div>{{message}}</div>
+  <div class="mb-3 d-flex justify-content-between" id="comment-content">
+    <div id="message">{{message}}</div>
     {{#if correctUser}}
       <div>
         <button
           type="button"
           class="btn btn-outline-dark btn-sm"
-          data-bs-toggle="modal"
-          data-bs-target="#modal"
+          name="edit-btn"
           id="{{id}}"
+          data-id="{{post_id}}"
         >
           Edit
         </button>
-        <button type="button" class="btn btn-dark btn-sm">
+        <button
+          type="button"
+          class="btn btn-dark btn-sm"
+          name="delete-comment-btn"
+          id="{{id}}"
+          data-id="{{post_id}}"
+        >
           Delete
         </button>
       </div>
     {{/if}}
   </div>
 </div>
+
+{{!-- <div class="modal fade" id="commentModal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Add a Comment</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <form id="{{id}}" name="edit-comment-form" data-id="{{post_id}}">
+        <div class="modal-body">
+          <div class="mb-3">
+            <textarea
+              class="form-control"
+              id="edit-comment-input"
+              rows="3"
+            >{{message}}</textarea>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-outline-dark"
+            data-bs-dismiss="modal"
+          >
+            Close
+          </button>
+          <button type="submit" class="btn btn-dark">Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div> --}}

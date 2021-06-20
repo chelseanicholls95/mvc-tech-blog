@@ -48,10 +48,12 @@ const onClickRenderEdit = async (event) => {
   const commentId = event.currentTarget.id;
   const postId = $(event.currentTarget).data("id");
 
-  const form = `<form name="edit-form" id="${commentId}" class="d-flex flex-row justify-content-between"
+  const form = `<form name="edit-form" id="${commentId}" class="d-flex justify-content-between"
   data-id="${postId}">
-    <input class="form-control form-control-sm" id="message-input" type="text" value="${message}">
     <div>
+      <input class="form-control form-control-sm" id="message-input" type="text" value="${message}">
+    </div>
+    <div class="d-flex">
       <button
         type="submit"
         class="btn btn-outline-dark btn-sm"
@@ -74,6 +76,7 @@ const onClickRenderEdit = async (event) => {
   $(container).append(form);
 
   $('[name="edit-form"]').submit(onSubmitUpdateComment);
+  $('[name="cancel-btn"]').click(onClickCancelEdit);
 };
 
 const onSubmitUpdateComment = async (event) => {
@@ -105,6 +108,12 @@ const onSubmitUpdateComment = async (event) => {
   } else {
     window.location.replace(`/view/${post_id}`);
   }
+};
+
+const onClickCancelEdit = (event) => {
+  const post_id = $(event.currentTarget).data("id");
+
+  window.location.replace(`/view/${post_id}`);
 };
 
 const onDeleteComment = async (event) => {

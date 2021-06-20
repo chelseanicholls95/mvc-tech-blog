@@ -1,14 +1,14 @@
 {{> private-navbar}}
 <div class="position-relative new-post-container">
-      <div class="position-absolute top-50 start-50 translate-middle w-75">
-        <h3 class="bg-dark text-light mx-5 p-3 text-center">
+      <div class="position-absolute top-50 start-50 translate-middle w-75 rounded" id="new-post">
+        <h3 class="mx-5 p-3 text-center header">
           {{#if edit}}
             Edit Post
           {{else}}
             Create A New Post
           {{/if}}
         </h3>
-        <form class="mx-5 p-3 border d-flex flex-column" id="{{post.id}}"
+        <form class="mx-5 p-3 d-flex flex-column" id="{{post.id}}"
           {{#if edit}}
             name="edit-post" 
           {{else}}
