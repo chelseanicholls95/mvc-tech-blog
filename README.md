@@ -2,6 +2,8 @@
 
 ## Description
 
+A full stack tech blog using a variety of front end and back end technologies. Users can sign up, log in and create posts, comment on others posts and edit and delete their own contributions.
+
 ## Table of Contents
 
 [Description](#description)  
@@ -13,10 +15,13 @@
 
 ## Technologies Used
 
+- HTML
+- CSS
 - JavaScript
 - Node.js
 - SQL
 - MySQL
+- Bootstrap
 
 ## Getting Started
 
@@ -24,24 +29,14 @@
 git clone git@github.com:chelseanicholls95/mvc-tech-blog.git
 cd mvc-tech-blog
 code .
-```
-
-### Run Application
-
-```
-npm run start
-```
-
-### Run Locally
-
-```
-npm run dev
 npm install
+npm run seed
+npm run dev
 ```
 
 ## Link to Deployed Application
 
-View the working application [here]().
+View the working application [here](https://fathomless-dusk-01596.herokuapp.com/).
 
 ## License
 
