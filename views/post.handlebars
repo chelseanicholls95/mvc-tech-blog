@@ -3,7 +3,7 @@
 {{else}}
 {{> public-navbar}}
 {{/if}}
-  <div class="d-flex justify-content-center mt-5 post-container">
+  <div class="container d-flex justify-content-center mt-5 post-container">
     <div class="card m-3 mb-4">
       <div class="card-header d-flex flex-column" id="post-card-header">
         <div>{{post.title}}</div>
@@ -28,9 +28,9 @@
       </div>
     </div>
   </div>
-    <div class="d-flex justify-content-center comments-container">
+    <div class="d-flex flex-wrap justify-content-center comments-container mb-4">
       <div class="mt-5 w-50 rounded" id="comments">
-        <div class="card-header d-flex justify-content-between">
+        <div class="card-header d-flex flex-wrap justify-content-between">
           <div>Comments</div>
           {{#if isLoggedIn}}
           <button

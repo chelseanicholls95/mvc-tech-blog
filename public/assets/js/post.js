@@ -83,7 +83,7 @@ const onSubmitUpdateComment = async (event) => {
   event.preventDefault();
   const comment_id = event.currentTarget.id;
   const post_id = $(event.currentTarget).data("id");
-  const message = $(event.currentTarget).children("#message-input").val();
+  const message = $(event.currentTarget).find("#message-input").val();
 
   const options = {
     method: "PUT",
